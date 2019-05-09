@@ -11,6 +11,14 @@ int main()
 	arr_assign = arr;
 	for (unsigned int i = 0, e = arr.size(); i < e; i++)
 		std::cout << arr[i] << " " << arr_copy[i] << " " << arr_assign[i] << std::endl;
+	for (unsigned int i = 0, e = arr.size(); i < e; i++)
+	{
+		arr[i] = i * 2;
+		arr_copy[i] = i * 3;
+		arr_assign[i] = i * 4;
+	}
+	for (unsigned int i = 0, e = arr.size(); i < e; i++)
+		std::cout << arr[i] << " " << arr_copy[i] << " " << arr_assign[i] << std::endl;
 	Array<std::string> strarr(5);
 	for (unsigned int i = 0, e = strarr.size(); i < e; i++)
 	{
@@ -22,5 +30,13 @@ int main()
 	strarr_assign = strarr;
 	for (unsigned int i = 0, e = strarr.size(); i < e; i++)
 		std::cout << strarr[i] << " " << strarr_copy[i] << " " << strarr_assign[i] << std::endl;
+	try
+	{
+		std::cout << strarr[10] << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	return 0;
 }
