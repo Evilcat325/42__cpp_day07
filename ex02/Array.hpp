@@ -67,7 +67,7 @@ Array<T> &Array<T>::operator=(Array<T> const &rhs)
 template <typename T>
 T &Array<T>::operator[](unsigned int i) const
 {
-	if (i > n)
+	if (i >= n)
 		throw Array<T>::ArrayIndexOutOfBound();
 	else
 		return arr[i];
